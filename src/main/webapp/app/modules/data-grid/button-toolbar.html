@@ -1,0 +1,30 @@
+<nav class="navbar navbar-default" role="navigation">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="">{{blotterName}}</a>
+    </div>
+    <div class="collapse navbar-collapse" id="">
+        <button type="button" ng-show="toolbar['filter']" ng-class="{btn: true, 'navbar-btn': true, 'btn-default': !filterOn,  'btn-danger': filterOn}" ng-click="isCollapsed = !isCollapsed" ng-init="showFilterForm=false">
+            <i class="fa fa-filter fa-fw"></i> Filter
+        </button>
+        <button type="button" ng-show="toolbar['view']" class="btn navbar-btn btn-default" ng-disabled="!selectedItems[0]" ng-click="showViewForm(selectedItems[0])">
+            <i class="fa fa-eye fa-fw"></i> View
+        </button>
+        <button type="button" ng-show="toolbar['add']" class="btn navbar-btn btn-default" ng-click="showAddForm()">
+            <i class="fa fa-plus fa-fw"></i> Add
+        </button>
+        <button type="button" ng-show="toolbar['edit']" class="btn navbar-btn btn-default" ng-disabled="!selectedItems[0]" ng-click="showEditForm(selectedItems[0])">
+            <i class="fa fa-edit fa-fw"></i> Edit
+        </button>
+        <button type="button" ng-show="toolbar['export']" class="btn navbar-btn btn-default" ng-click="showExportForm()">
+            <i class="fa fa-cloud-download fa-fw"></i> Export
+        </button>
+
+        <button type="button" ng-show="toolbar['upload']" class="btn navbar-btn btn-default" ng-click="showUploadForm()">
+            <i class="fa fa-cloud-upload fa-fw"></i> Upload
+        </button>
+
+        <button type="button" ng-show="toolbar['preferences']" class="btn navbar-btn btn-default" ng-click="showPreferencesForm()">
+            <i class="fa fa-gears fa-fw"></i> Preferences
+        </button>
+    </div>
+</nav>

@@ -1,0 +1,24 @@
+<div collapse="isCollapsed">
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="well">
+                <div class="modal-header" style="padding: 10px">
+                    <h4 style="margin: 1px"><i class="fa fa-filter fa-fw"></i> Filter  {{ formConfig.model }}s</h4>
+                </div>
+                <div class="" style="margin-top: 10px;">
+                    <form novalidate name="filterForm" novalidate class="form-horizontal" style="margin-bottom: 0px;">
+                        <div class="row">
+                            <div ng-repeat="field in formConfig.fields" class="col-md-2 smart-form-input" style="margin-left: 30px; margin-right: 0px; margin-top: -5px; margin-bottom: -10px"></div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer" style="margin-top: 10px; padding: 10px">
+                    <button ng-click="resetFilter()" ng-disabled="filterReset" class="btn btn-sm btn-danger"><i class="fa fa-times fa-fw"></i> Reset</button>
+                    <button ng-click="filter()" ng-disabled="filterForm.$pristine" class="btn btn-sm btn-success"><i class="fa fa-check fa-fw"></i> Filter</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

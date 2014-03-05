@@ -1,0 +1,16 @@
+<div class="dropdown">
+    <button class="btn btn-default dropdown-toggle form-control input-sm" ng-click="toggleSelect()">
+        <span class="pull-left">  {{header}}</span>
+        <span class="pull-right caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        <li ng-show="multiple">
+            <button class="btn-link btn-small" ng-click="checkAll()"><span class="glyphicon glyphicon-ok"></span> Check All</button>
+            <button class="btn-link btn-small" ng-click="uncheckAll()"><span class="glyphicon glyphicon-remove"></span> Uncheck All</button>
+        </li>
+        <li ng-repeat="i in items">
+            <a ng-click="select(i)">
+                <span ng-class="{'glyphicon': true, 'glyphicon-ok': i.checked, 'glyphicon-empty': !i.checked}"></span>  {{i.label}}</a>
+        </li>
+    </ul>
+</div>

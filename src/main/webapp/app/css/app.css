@@ -1,0 +1,144 @@
+/* app css stylesheet */
+
+.navbar-default{
+    color: rgb(100,100,100);
+    max-height:20px;
+    margin-bottom: 10px;
+}
+
+.custom-error {
+    color:#FF0000;
+}
+
+.gridStyle {
+    border: 1px solid rgb(212,212,212);
+
+    /*margin-right: 10px;
+    margin-left:  10px;*/
+    height: 390px;
+    vertical-align: 10%;
+}
+/* required for the ajax 'Loading' spinner */
+.cg-busy{
+    position:absolute;
+    top:35px;
+    left:0px;
+    right:0px;
+    bottom:0px;
+}
+
+.fa-warning {
+    color: red;
+    margin-right: 10px;
+}
+
+.fa-filter {
+    color: red;
+}
+
+.fa-plus {
+    color: green;
+}
+
+.fa-edit {
+    color: saddlebrown;
+}
+
+.fa-cloud-download {
+    color: blue;
+}
+
+.fa-cloud-upload {
+    color: deepskyblue;
+}
+
+.well {
+    min-height: 20px;
+    padding: 1px;
+    padding-left: 10px;
+    background-color: #f5f5f5;
+    border: 1px solid #e3e3e3;
+    border-radius: 5px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.table-condensed2 > thead > tr > th,
+.table-condensed2 > tbody > tr > th,
+.table-condensed2 > tfoot > tr > th,
+.table-condensed2 > thead > tr > td,
+.table-condensed2 > tbody > tr > td,
+.table-condensed2 > tfoot > tr > td {
+    padding: 0px;
+}
+
+
+
+.has-error .help-block,
+.has-error .control-label,
+.has-error .radio,
+.has-error .checkbox,
+.has-error .radio-inline,
+.has-error .checkbox-inline {
+    color: red;
+}
+
+.has-error .form-control {
+    border-color: red;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+
+.has-error .form-control:focus {
+    border-color: red;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ff6e78;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ff6e78;
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1200px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .container {
+        width: 1440px;
+    }
+}
+
+.smart-form-input{
+    max-height: 60px;
+    max-width:  200px;
+}
+
+.control-label{
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.input-sm {
+    padding-bottom:1px;
+    padding-top: 1px;
+    padding-left: 4px;
+    padding-right: 4px;
+    max-height: 23px;
+}
+
+
+/* required for modal dialogs */
+.modal {
+    display: block;
+}
+
+/** standard dialog */
+.modal .modal-dialog{
+    width: 505px;
+    max-height: 800px;
+}
+
+/** small dialog */
+.dialog-small .modal-dialog {
+    width: 250px;
+    margin-top: 10%;
+}

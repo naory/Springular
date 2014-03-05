@@ -1,0 +1,65 @@
+<div class="modal-header" style="padding: 10px">
+    <button type="button" class="close" ng-click="close()" aria-hidden="true">&times;</button>
+    <h3 class="modal-title"><i class="fa fa-fw fa-cloud-download"></i>Export {{ formConfig.model }}</h3>
+</div>
+<div class="modal-body">
+    <form name="exportForm" novalidate ng-submit="export()" class="form-horizontal">
+        <div class="row">
+
+            <div class="radio">
+                <label><input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>Current page</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="optionsRadios" id="optionsRadios2" value="option1" >Entire data-set</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="optionsRadios" id="optionsRadios3" value="option1" >Limit to: </label>
+                <input type="number" placeholder="Name"
+                       name="name"
+                       ng-model="signup.name"
+                       ng-disabled=""
+                       ng-maxlength=20 required />
+            </div>
+
+            <div class="large-12 columns">
+                <label>Your name</label>
+                <input type="text"
+                       placeholder="Name"
+                       name="name"
+                       ng-model="signup.name"
+                       ng-minlength=3
+                       ng-maxlength=20 required />
+                <div class="error"
+                     ng-show="signup_form.name.$dirty && signup_form.name.$invalid">
+                    <small class="error"
+                           ng-show="signup_form.name.$error.required">
+                        Your name is required.
+                    </small>
+                    <small class="error"
+                           ng-show="signup_form.name.$error.minlength">
+                        Your name is required to be at least 3 characters
+                    </small>
+                    <small class="error"
+                           ng-show="signup_form.name.$error.maxlength">
+                        Your name cannot be longer than 20 characters
+                    </small>
+                </div>
+            </div>
+
+        </div>
+    </form>
+
+    <p>form-valid:  {{exportForm.$valid | json}}</p>
+    <p>form-pristine:  {{exportForm.$pristine | json}}</p>
+    <p>name field:  {{exportForm.name.$error | json}}</p>
+
+    <!--<div class="alert alert-danger alert-dismissable" ng-show="formModel.errors.length > 0">
+        <ul>
+            <li ng-repeat="error in formModel.errors">{{ error }}</li>
+        </ul>
+    </div>-->
+</div>
+<div class="modal-footer" style="margin-top: 10px; padding: 10px">
+    <button ng-click="close()" class="btn btn-danger"><i class="fa fa-times fa-fw"></i> Close</button>
+    <button type="submit" ng-disabled="!exportForm.$valid" class="btn btn-success"><i class="fa fa-check fa-fw"></i> Export</button>
+</div>

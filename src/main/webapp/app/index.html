@@ -1,0 +1,88 @@
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content>
+    <title>Springular</title>
+    <!-- load angularJS first (recommended for using Ng-Cloak) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script>
+
+    <link href="modules/multiselect/multiselect.css" rel="stylesheet"/>
+    <link href="lib/ng-grid/2.0.6/ng-grid.css" rel="stylesheet">
+    <link href="lib/promise-tracker/angular-busy.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet"/>
+    <link href="css/navbar.css" rel="stylesheet"/>
+    <link href="css/app.css" rel="stylesheet"/>
+
+</head>
+<body ng-cloak>
+
+<div class="container">
+    <!-- Navigation (bootstrap 3.0.3) -->
+    <div class="navbar navbar-default" role="navigation" bs-navbar>
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#"><!--img style="max-height:35px; margin-top: -15px; margin-right: 10px;" src="logo.png"-->Springular App</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li data-match-route="/users" ng-show="isAuthorized('USER')" ><a href="#/users">Users</a></li>
+                <li data-match-route="/roles" ng-show="isAuthorized('ADMIN')"><a href="#/roles">Roles</a></li>
+                <li data-match-route="/administration" ng-show="isAuthorized('ADMIN')" ><a href="#/administration">Administration</a></li>
+                <li data-match-route="/test" ng-show="isAuthorized('ADMIN')" ><a href="#/test">Test</a></li>
+            </ul>
+            <!-- menu for the logged in user -->
+            <div class="pull-right">
+                <ul class="nav navbar-nav pull-right">
+                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user fa-fw"></i> {{ currentUser.user }} <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/api/user/preferences"><i class="fa fa-cog fa-fw"></i> Preferences</a></li>
+                            <li class="divider"></li>
+                            <li><a href="/j_spring_security_logout"><i class="fa fa-power-off fa-fw"></i> Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Angular View is injected here: -->
+    <div ng-view></div>
+
+
+
+</div> <!-- /container -->
+
+<!-- JavaScript dependencies: -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular-route.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular-animate.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular-cookies.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular-sanitize.js"></script>
+
+<!-- Ng-Grid and JQuery dependency -->
+<script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+<script src="lib/ng-grid/2.0.6/ng-grid.js"></script>
+
+<script src="lib/angular-strap-0.7.7/angular-strap.js"></script>
+
+<script src="lib/promise-tracker/promise-tracker.js"></script>
+<script src="lib/promise-tracker/angular-busy.js"></script>
+
+<script src="lib/angular-ui-bootstrap/ui-bootstrap-tpls-0.9.0.js"></script>
+
+<script src="js/app.js"></script>
+<script src="js/services.js"></script>
+<script src="js/controllers.js"></script>
+<script src="js/filters.js"></script>
+<script src="js/directives.js"></script>
+
+<script src="modules/authorization/authorization.js"></script>
+<script src="modules/multiselect/multiselect.js"></script>
+<script src="modules/server-proxy/server-proxy.js"></script>
+<script src="modules/data-grid/data-grid.js"></script>
+<script src="modules/dynamic-form/dynamic-form.js"></script>
+
+</body>
+</html>
